@@ -1,4 +1,4 @@
-package com.lidong.photopicker;
+package com.fei.pavement.textphone2;
 
 /**
  * 照片选择类型

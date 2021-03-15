@@ -1,4 +1,4 @@
-package com.lidong.photopicker;
+package com.fei.pavement.textphone2;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.fei.pavement.R;
 
 import java.io.File;
 import java.util.ArrayList;

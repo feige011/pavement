@@ -4,39 +4,42 @@ import java.util.List;
 
 //outData��v_data Ϊһ��double���͵����飬����Ϊ�̶�Ϊ400
 class gaussion {
-	public void show(double[] outData,double[] v_data) {
+	public List<Integer> show(ArrayList<Double> outData, ArrayList<Double> v_data) {
 		double averagedata = average(outData);//����ƽ��ֵ����
 		double deviationdata = deviation(outData);//���ñ�׼���
-		List<String> list=new ArrayList<String>();//���ø÷��������������Ԫ��
+//		System.out.println();
+		List<Integer> list=new ArrayList<Integer>();//���ø÷��������������Ԫ��
 		//��outData��v_data�е�Ԫ�ؽ���һϵ���жϣ�Ȼ��ͨ���жϵ�Ԫ�ص���ż�������list
-		for (int i=0;i<401;i++) {
-			if (Math.abs(outData[i]-averagedata)>v_data[i]/8*deviationdata){  
-				if (Math.abs(outData[i])>v_data[i]*0.04) {
-					if (v_data[i]>20) {
-						String s = String.valueOf(i);//��int��ת��Ϊstring��
-						list.add(s);
+		for (int i=0;i<12000;i++) {
+			if (Math.abs(outData.get(i)-averagedata)>v_data.get(i)/8*deviationdata){
+				if (Math.abs(outData.get(i))>v_data.get(i)*0.04) {
+					if (v_data.get(i)>20) {
+//						String s = String.valueOf(i);//��int��ת��Ϊstring��
+//						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						list.add(i);
 					}
 				}
 			}
 		}
+		return list;
 	}
-	
+
 	//����һ�������������ƽ��ֵ
-	private double average(double[] outData) {
+	private double average(ArrayList<Double> outData) {
 		double result = 0;
-		for(int i = 0;i < outData.length; i++) {
-			result += outData[i] / outData.length;
+		for(int i = 0;i < 12000; i++) {
+			result += outData.get(i) / 12000;
 		}
 		return result;
 	}
-	
+
 	//����һ�������������׼��
-	private double deviation(double[] outData) {
+	private double deviation(ArrayList<Double> outData) {
 		double result = 0;
-		for (int i = 0; i < outData.length; i++) {
-            result = result + (Math.pow((outData[i] - average(outData)), 2));
-        }
-        result = Math.sqrt(result / (outData.length-1));
+		for (int i = 0; i < 12000; i++) {
+			result = result + (Math.pow((outData.get(i) - average(outData)), 2));
+		}
+		result = Math.sqrt(result / (12000-1));
 		return result;
 	}
 }

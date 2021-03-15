@@ -3,36 +3,39 @@ package com.fei.pavement.textphone2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.lidong.photopicker.widget.ViewPagerFixed;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
+import com.fei.pavement.R;
+import com.fei.pavement.textphone2.widget.ViewPagerFixed;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
 /**
  * Created by foamtrace on 2015/8/25.
  */
-public class PhotoPreviewActivity extends AppCompatActivity implements com.lidong.photopicker.PhotoPagerAdapter.PhotoViewClickListener{
+public class PhotoPreviewActivity extends AppCompatActivity implements PhotoPagerAdapter.PhotoViewClickListener{
+
 
     public static final String EXTRA_PHOTOS = "extra_photos";
     public static final String EXTRA_CURRENT_ITEM = "extra_current_item";
 
     /** 选择结果，返回为 ArrayList&lt;String&gt; 图片路径集合  */
     public static final String EXTRA_RESULT = "preview_result";
-
     /** 预览请求状态码 */
     public static final int REQUEST_PREVIEW = 99;
 
     private ArrayList<String> paths;
     private ViewPagerFixed mViewPager;
-    private com.lidong.photopicker.PhotoPagerAdapter mPagerAdapter;
+    private PhotoPagerAdapter mPagerAdapter;
     private int currentItem = 0;
 
     @Override
@@ -51,7 +54,7 @@ public class PhotoPreviewActivity extends AppCompatActivity implements com.lidon
 
         currentItem = getIntent().getIntExtra(EXTRA_CURRENT_ITEM, 0);
 
-        mPagerAdapter = new com.lidong.photopicker.PhotoPagerAdapter(this, paths);
+        mPagerAdapter = new PhotoPagerAdapter(this, paths);
         mPagerAdapter.setPhotoViewClickListener(this);
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setCurrentItem(currentItem);
@@ -77,6 +80,11 @@ public class PhotoPreviewActivity extends AppCompatActivity implements com.lidon
     }
 
     private void initViews(){
+        /**
+         * 接收经纬度
+         */
+
+
         mViewPager = (ViewPagerFixed) findViewById(R.id.vp_photos);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.pickerToolbar);
         setSupportActionBar(mToolbar);

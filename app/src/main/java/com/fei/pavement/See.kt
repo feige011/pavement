@@ -1,4 +1,6 @@
 package com.fei.pavement
 
-object AllSee {
-}
+
+
+
+data class See(val jingdu:Double, val weidu:Double)

@@ -2,6 +2,7 @@ package com.fei.pavement
 
 
 import android.app.Activity
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.os.Bundle
@@ -12,6 +13,8 @@ import com.baidu.location.LocationClient
 import com.baidu.location.LocationClientOption
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.model.LatLng
+import java.io.BufferedWriter
+import java.io.OutputStreamWriter
 import java.lang.Exception
 
 
@@ -25,36 +28,20 @@ class MapsActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-//        mMapView.setMyLocationEnabled(true);
         mMapView = findViewById(R.id.bmapView)
         val builder = MapStatus.Builder()
-//        val mBaiduMap=BaiduMap()
         mBaiduMap = mMapView.map
         mBaiduMap.mapType = BaiduMap.MAP_TYPE_NORMAL
         mBaiduMap.isMyLocationEnabled = true;
         mLocationClient = LocationClient(applicationContext);
-//        mBaiduMap.mapType = BaiduMap.MAP_TYPE_SATELLITE;
-//        mBaiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-//        mMapView.setMyLocationEnabled(true);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//        val mapFragment = supportFragmentManager
-//                .findFragmentById(R.id.map) as SupportMapFragment
-//        mapFragment.getMapAsync(this)
-//        SDKInitializer.initialize(this);
 
-//        mLocationClient = LocationClient(this)
-
-//通过LocationClientOption设置LocationClient相关参数
 
 //通过LocationClientOption设置LocationClient相关参数
         val option = LocationClientOption()
-//        option.isOpenGps = true // 打开gps
-
         option.setCoorType("bd09ll") // 设置坐标类型
         option.setScanSpan(1000)
         option.setIgnoreKillProcess(false);
         option.isOpenGps = true; // 打开gps
-//设置locationClientOption
 
 //设置locationClientOption
         mLocationClient.locOption = option

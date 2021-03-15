@@ -1,9 +1,10 @@
-package com.lidong.photopicker.intent;
+package com.fei.pavement.textphone2.intent;
 
 import android.content.Context;
 import android.content.Intent;
 
-import com.lidong.photopicker.PhotoPreviewActivity;
+
+import com.fei.pavement.textphone2.PhotoPreviewActivity;
 
 import java.util.ArrayList;
 

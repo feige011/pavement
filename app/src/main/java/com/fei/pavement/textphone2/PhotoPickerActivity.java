@@ -1,4 +1,4 @@
-package com.lidong.photopicker;
+package com.fei.pavement.textphone2;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,15 +6,12 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,16 +19,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ListPopupWindow;
 import android.widget.Toast;
 
-import com.lidong.photopicker.intent.PhotoPreviewIntent;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+
+import com.fei.pavement.R;
+import com.fei.pavement.textphone2.intent.PhotoPreviewIntent;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhotoPickerActivity extends AppCompatActivity{
+public class PhotoPickerActivity extends AppCompatActivity {
 
     public static final String TAG = PhotoPickerActivity.class.getName();
 
@@ -87,9 +94,9 @@ public class PhotoPickerActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photopicker);
-
+        Log.e("feifei111","11111");
         initViews();
-
+        Log.e("feifei2222","222222");
         // 照片属性
         imageConfig = getIntent().getParcelableExtra(EXTRA_IMAGE_CONFIG);
 
@@ -118,6 +125,7 @@ public class PhotoPickerActivity extends AppCompatActivity{
         mGridView.setAdapter(mImageAdapter);
 
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (mImageAdapter.isShowCamera()) {
@@ -337,9 +345,13 @@ public class PhotoPickerActivity extends AppCompatActivity{
     /**
      * 选择相机
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void showCameraAction() {
         try {
             Intent intent = captureManager.dispatchTakePictureIntent();
+            StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+            StrictMode.setVmPolicy(builder.build());
+            builder.detectFileUriExposure();
             startActivityForResult(intent, ImageCaptureManager.REQUEST_TAKE_PHOTO);
         } catch (IOException e) {
             Toast.makeText(mCxt, R.string.msg_no_camera, Toast.LENGTH_SHORT).show();

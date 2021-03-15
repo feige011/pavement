@@ -7,10 +7,13 @@
     tools:ignore="ResourceName">
 
     <include layout="@layout/photopicker_toolbar" />
-
-    <com.lidong.photopicker.widget.ViewPagerFixed
-        android:id="@+id/vp_photos"
+    <com.fei.pavement.textphone2.widget.ViewPagerFixed
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/vp_photos"/>
+<!--    <com.lidong.photopicker.widget.ViewPagerFixed-->
+<!--        android:id="@+id/vp_photos"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
 
 </LinearLayout>

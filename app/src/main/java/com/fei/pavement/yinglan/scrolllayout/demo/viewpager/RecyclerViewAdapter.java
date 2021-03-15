@@ -1,12 +1,13 @@
 package com.fei.pavement.yinglan.scrolllayout.demo.viewpager;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yinglan.scrolllayout.demo.R;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.fei.pavement.R;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -35,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.item_tv_2);
+//            textView = (TextView) itemView.findViewById(R.id.item_tv_2);
         }
 
         TextView textView;

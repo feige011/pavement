@@ -15,7 +15,7 @@ public class Folder {
     @Override
     public boolean equals(Object o) {
         try {
-            com.lidong.photopicker.Folder other = (com.lidong.photopicker.Folder) o;
+            com.fei.pavement.textphone2.Folder other = (com.fei.pavement.textphone2.Folder) o;
             return this.path.equalsIgnoreCase(other.path);
         }catch (ClassCastException e){
             e.printStackTrace();

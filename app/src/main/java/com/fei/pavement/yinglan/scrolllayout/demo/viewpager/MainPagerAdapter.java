@@ -1,14 +1,14 @@
 package com.fei.pavement.yinglan.scrolllayout.demo.viewpager;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-
 import com.bumptech.glide.Glide;
-import com.yinglan.scrolllayout.demo.model.Address;
+import androidx.viewpager.widget.PagerAdapter;
+
+import com.fei.pavement.yinglan.scrolllayout.demo.model.Address;
 
 import java.util.ArrayList;
 import java.util.HashMap;

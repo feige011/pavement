@@ -1,13 +1,16 @@
-package com.lidong.photopicker;
+package com.fei.pavement.textphone2;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.v4.view.PagerAdapter;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.bumptech.glide.Glide;
+import com.fei.pavement.R;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -16,11 +19,13 @@ import java.util.List;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
+
 /**
  * Created by donglua on 15/6/21.
  */
 public class PhotoPagerAdapter extends PagerAdapter {
 
+//  public static ArrayList<String> URLAll=new ArrayList<>();
   public interface PhotoViewClickListener{
     void OnPhotoTapListener(View view, float v, float v1);
   }
@@ -52,8 +57,10 @@ public class PhotoPagerAdapter extends PagerAdapter {
     final Uri uri;
     if (path.startsWith("http")) {
       uri = Uri.parse(path);
+//      URLAll.add(uri.getPath());
     } else {
       uri = Uri.fromFile(new File(path));
+//      URLAll.add(uri.getPath());
     }
     Glide.with(mContext)
             .load(uri)

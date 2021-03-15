@@ -2,16 +2,18 @@ package com.fei.pavement.yinglan.scrolllayout.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.fei.pavement.R;
+import com.fei.pavement.yinglan.scrolllayout.demo.util.ScreenUtil;
+import com.fei.pavement.yinglan.scrolllayout.demo.viewpager.ListviewAdapter;
 import com.yinglan.scrolllayout.ScrollLayout;
-import com.yinglan.scrolllayout.demo.util.ScreenUtil;
-import com.yinglan.scrolllayout.demo.viewpager.ListviewAdapter;
 
 /**
  * @function 主页
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**设置 setting*/
         mScrollLayout.setMinOffset(0);
-        mScrollLayout.setMaxOffset((int) (ScreenUtil.getScreenHeight(this) * 0.5));
+        mScrollLayout.setMaxOffset((int) (ScreenUtil.getScreenHeight(this) * 0.3));
         mScrollLayout.setExitOffset(ScreenUtil.dip2px(this, 50));
         mScrollLayout.setIsSupportExit(true);
         mScrollLayout.setAllowHorizontalScroll(true);

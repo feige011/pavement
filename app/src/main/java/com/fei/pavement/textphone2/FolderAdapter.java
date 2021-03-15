@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.fei.pavement.R;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class FolderAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
 
-    private List<com.lidong.photopicker.Folder> mFolders = new ArrayList<>();
+    private List<Folder> mFolders = new ArrayList<>();
 
     int mImageSize;
 
@@ -39,7 +40,7 @@ public class FolderAdapter extends BaseAdapter {
      * 设置数据集
      * @param folders
      */
-    public void setData(List<com.lidong.photopicker.Folder> folders) {
+    public void setData(List<Folder> folders) {
         if(folders != null && folders.size()>0){
             mFolders = folders;
         }else{
@@ -54,7 +55,7 @@ public class FolderAdapter extends BaseAdapter {
     }
 
     @Override
-    public com.lidong.photopicker.Folder getItem(int i) {
+    public Folder getItem(int i) {
         if(i == 0) return null;
         return mFolders.get(i-1);
     }
@@ -78,7 +79,7 @@ public class FolderAdapter extends BaseAdapter {
                 holder.name.setText(mContext.getResources().getString(R.string.all_image));
                 holder.size.setText(getTotalImageSize() + "张");
                 if(mFolders.size()>0){
-                    com.lidong.photopicker.Folder f = mFolders.get(0);
+                   Folder f = mFolders.get(0);
 
                     Glide.with(mContext)
                             .load(new File(f.cover.path))
@@ -102,7 +103,7 @@ public class FolderAdapter extends BaseAdapter {
     private int getTotalImageSize(){
         int result = 0;
         if(mFolders != null && mFolders.size()>0){
-            for (com.lidong.photopicker.Folder f: mFolders){
+            for (Folder f: mFolders){
                 result += f.images.size();
             }
         }
@@ -133,7 +134,7 @@ public class FolderAdapter extends BaseAdapter {
             view.setTag(this);
         }
 
-        void bindData(com.lidong.photopicker.Folder data) {
+        void bindData(Folder data) {
             name.setText(data.name);
             size.setText(data.images.size() + "张");
             // 显示图片

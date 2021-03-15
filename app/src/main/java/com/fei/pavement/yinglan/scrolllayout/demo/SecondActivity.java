@@ -2,17 +2,19 @@ package com.fei.pavement.yinglan.scrolllayout.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
+import com.fei.pavement.R;
+import com.fei.pavement.yinglan.scrolllayout.demo.model.Address;
+import com.fei.pavement.yinglan.scrolllayout.demo.model.Constant;
+import com.fei.pavement.yinglan.scrolllayout.demo.viewpager.MainPagerAdapter;
 import com.yinglan.scrolllayout.ScrollLayout;
-import com.yinglan.scrolllayout.demo.model.Address;
-import com.yinglan.scrolllayout.demo.model.Constant;
-import com.yinglan.scrolllayout.demo.viewpager.MainPagerAdapter;
 
 import java.util.ArrayList;
 

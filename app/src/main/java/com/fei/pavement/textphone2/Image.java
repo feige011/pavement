@@ -18,7 +18,7 @@ public class Image {
     @Override
     public boolean equals(Object o) {
         try {
-            com.lidong.photopicker.Image other = (com.lidong.photopicker.Image) o;
+            com.fei.pavement.textphone2.Image other = (com.fei.pavement.textphone2.Image) o;
             return this.path.equalsIgnoreCase(other.path);
         }catch (ClassCastException e){
             e.printStackTrace();

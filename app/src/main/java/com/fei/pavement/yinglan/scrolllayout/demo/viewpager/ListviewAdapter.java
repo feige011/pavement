@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.yinglan.scrolllayout.demo.R;
+import com.fei.pavement.R;
 
 /**
  * @function listviewadapter
@@ -24,7 +24,7 @@ public class ListviewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 50;
+        return 1;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class ListviewAdapter extends BaseAdapter {
         TextView textView;
 
         public ViewHolder(View view) {
-            textView = (TextView) view.findViewById(R.id.item_tv_2);
+//            textView = (TextView) view.findViewById(R.id.item_tv_2);
         }
     }
 }

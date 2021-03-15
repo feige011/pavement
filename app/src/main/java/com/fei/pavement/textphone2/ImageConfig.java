@@ -1,7 +1,8 @@
-package com.lidong.photopicker;
+package com.fei.pavement.textphone2;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 /**
  * 读取手机照片的限制参数

@@ -1,16 +1,19 @@
 package com.fei.pavement.yinglan.scrolllayout.demo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
+import com.fei.pavement.R;
+import com.fei.pavement.yinglan.scrolllayout.demo.util.ScreenUtil;
+import com.fei.pavement.yinglan.scrolllayout.demo.viewpager.RecyclerViewAdapter;
 import com.yinglan.scrolllayout.ScrollLayout;
-import com.yinglan.scrolllayout.demo.util.ScreenUtil;
-import com.yinglan.scrolllayout.demo.viewpager.RecyclerViewAdapter;
 
 public class ThreeActivity extends AppCompatActivity {
 

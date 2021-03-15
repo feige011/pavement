@@ -3,8 +3,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/android"
-    tools:context=".MainActivity">
+    android:background="@mipmap/android">
 
     <com.yinglan.scrolllayout.ScrollLayout
         android:id="@+id/scroll_down_layout"
